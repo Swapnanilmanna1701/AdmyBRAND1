@@ -160,7 +160,7 @@ export function Navigation() {
 
                   {/* Glass effect for active state with gradient */}
                   {activeSection === item.id && (
-                    <div className="absolute inset-0 bg-gradient-to-r from-blue-600/30 to-purple-600/30 backdrop-blur-sm rounded-2xl border border-blue-500/30 dark:border-purple-500/30 shadow-lg"></div>
+                    <div className="absolute inset-0 bg-gradient-to-r from-blue-600 to-purple-600 backdrop-blur-sm rounded-2xl border border-blue-500/30 dark:border-purple-500/30 shadow-lg"></div>
                   )}
 
                   <span className="relative z-10">{item.name}</span>
@@ -192,7 +192,7 @@ export function Navigation() {
 
                         {/* Glass effect for active state with gradient */}
                         {theme === option.value && (
-                          <div className="absolute inset-0 bg-gradient-to-r from-blue-600/30 to-purple-600/30 backdrop-blur-sm rounded-2xl border border-blue-500/30 dark:border-purple-500/30 shadow-lg"></div>
+                          <div className="absolute inset-0 bg-gradient-to-r from-blue-600 to-purple-600 backdrop-blur-sm rounded-2xl border border-blue-500/30 dark:border-purple-500/30 shadow-lg"></div>
                         )}
 
                         <div className="relative z-10 flex items-center space-x-3">

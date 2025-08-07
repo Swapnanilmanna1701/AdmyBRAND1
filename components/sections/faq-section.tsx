@@ -1,7 +1,12 @@
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
-import { Card, CardContent } from "@/components/ui/card"
-import { MessageCircle, Mail, Phone } from "lucide-react"
-
+import Contact from "@/components/sections/contact";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
+import { Card, CardContent } from "@/components/ui/card";
+import { Mail, MessageCircle, Phone } from "lucide-react";
 export function FAQSection() {
   const faqs = [
     {
@@ -34,7 +39,7 @@ export function FAQSection() {
       answer:
         "While our AI provides intelligent recommendations out of the box, you can customize parameters, set business rules, and train the AI based on your specific goals and preferences to align with your brand strategy.",
     },
-  ]
+  ];
 
   return (
     <section id="faq" className="py-24 px-4 sm:px-6 lg:px-8">
@@ -42,11 +47,14 @@ export function FAQSection() {
         {/* Header */}
         <div className="text-center mb-16">
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6">
-            <span className="text-gray-900 dark:text-white">Frequently Asked</span>
+            <span className="text-gray-900 dark:text-white">
+              Frequently Asked
+            </span>
             <span className="gradient-text"> Questions</span>
           </h2>
           <p className="text-lg sm:text-xl text-gray-600 dark:text-gray-300">
-            Everything you need to know about ADmyBRAND and how it can transform your marketing.
+            Everything you need to know about ADmyBRAND and how it can transform
+            your marketing.
           </p>
         </div>
 
@@ -54,21 +62,32 @@ export function FAQSection() {
         <div className="glass rounded-3xl p-8 mb-12">
           <Accordion type="single" collapsible className="space-y-4">
             {faqs.map((faq, index) => (
-              <AccordionItem key={index} value={`item-${index}`} className="border-0">
+              <AccordionItem
+                key={index}
+                value={`item-${index}`}
+                className="border-0"
+              >
                 <AccordionTrigger className="text-left hover:no-underline py-6 px-6 rounded-xl hover:bg-white/50 dark:hover:bg-gray-800/50 transition-colors">
-                  <span className="font-semibold text-gray-900 dark:text-white">{faq.question}</span>
+                  <span className="font-semibold text-gray-900 dark:text-white">
+                    {faq.question}
+                  </span>
                 </AccordionTrigger>
                 <AccordionContent className="px-6 pb-6">
-                  <p className="text-gray-600 dark:text-gray-300 leading-relaxed">{faq.answer}</p>
+                  <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
+                    {faq.answer}
+                  </p>
                 </AccordionContent>
               </AccordionItem>
             ))}
           </Accordion>
         </div>
+        <Contact />
 
         {/* Contact Section */}
         <div className="text-center">
-          <h3 className="text-2xl font-bold mb-6 text-gray-900 dark:text-white">Still have questions?</h3>
+          <h3 className="text-2xl font-bold mb-6 text-gray-900 dark:text-white">
+            Still have questions?
+          </h3>
           <p className="text-gray-600 dark:text-gray-300 mb-8">
             Our team is here to help you get started with ADmyBRAND.
           </p>
@@ -79,8 +98,12 @@ export function FAQSection() {
                 <div className="w-12 h-12 bg-gradient-to-r from-blue-500 to-indigo-600 rounded-xl flex items-center justify-center mx-auto mb-4 shadow-lg">
                   <MessageCircle className="h-6 w-6 text-white" />
                 </div>
-                <h4 className="font-semibold mb-2 text-gray-900 dark:text-white">Live Chat</h4>
-                <p className="text-sm text-gray-600 dark:text-gray-400">Get instant answers from our support team</p>
+                <h4 className="font-semibold mb-2 text-gray-900 dark:text-white">
+                  Live Chat
+                </h4>
+                <p className="text-sm text-gray-600 dark:text-gray-400">
+                  Get instant answers from our support team
+                </p>
               </CardContent>
             </Card>
 
@@ -89,8 +112,12 @@ export function FAQSection() {
                 <div className="w-12 h-12 bg-gradient-to-r from-purple-500 to-pink-600 rounded-xl flex items-center justify-center mx-auto mb-4 shadow-lg">
                   <Mail className="h-6 w-6 text-white" />
                 </div>
-                <h4 className="font-semibold mb-2 text-gray-900 dark:text-white">Email Support</h4>
-                <p className="text-sm text-gray-600 dark:text-gray-400">Detailed help via email within 24 hours</p>
+                <h4 className="font-semibold mb-2 text-gray-900 dark:text-white">
+                  Email Support
+                </h4>
+                <p className="text-sm text-gray-600 dark:text-gray-400">
+                  Detailed help via email within 24 hours
+                </p>
               </CardContent>
             </Card>
 
@@ -99,7 +126,9 @@ export function FAQSection() {
                 <div className="w-12 h-12 bg-gradient-to-r from-green-500 to-emerald-600 rounded-xl flex items-center justify-center mx-auto mb-4 shadow-lg">
                   <Phone className="h-6 w-6 text-white" />
                 </div>
-                <h4 className="font-semibold mb-2 text-gray-900 dark:text-white">Phone Support</h4>
+                <h4 className="font-semibold mb-2 text-gray-900 dark:text-white">
+                  Phone Support
+                </h4>
                 <p className="text-sm text-gray-600 dark:text-gray-400">
                   Direct phone support for enterprise customers
                 </p>
@@ -109,5 +138,5 @@ export function FAQSection() {
         </div>
       </div>
     </section>
-  )
+  );
 }
