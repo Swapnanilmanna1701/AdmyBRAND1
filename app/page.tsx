@@ -4,6 +4,7 @@ import { Footer } from "@/components/sections/footer";
 import { HeroSection } from "@/components/sections/hero-section";
 import { PerformanceOptimizationSection } from "@/components/sections/performrnce";
 import { PricingSection } from "@/components/sections/pricing-section";
+import { RoiCalculatorSection } from "@/components/sections/roi";
 import { TestimonialsSection } from "@/components/sections/testimonials-section";
 import { Chatbot } from "@/components/ui/chatbot";
 import { Navigation } from "@/components/ui/navigation";
@@ -17,6 +18,7 @@ export default function Home() {
         <PerformanceOptimizationSection />
         <FeaturesSection />
         <PricingSection />
+        <RoiCalculatorSection />
         <TestimonialsSection />
         <FAQSection />
       </main>

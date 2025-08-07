@@ -1,49 +1,49 @@
-"use client"
+"use client";
 
-import { useState, useEffect } from "react"
-import { Moon, Sun, Monitor, Menu, X, Sparkles, Play } from "lucide-react"
-import { useTheme } from "next-themes"
+import { Menu, Monitor, Moon, Play, Sparkles, Sun, X } from "lucide-react";
+import { useTheme } from "next-themes";
+import { useEffect, useState } from "react";
 
 export function Navigation() {
-  const [isOpen, setIsOpen] = useState(false)
-  const [isScrolled, setIsScrolled] = useState(false)
-  const [themeDropdownOpen, setThemeDropdownOpen] = useState(false)
-  const [activeSection, setActiveSection] = useState("")
-  const { theme, setTheme } = useTheme()
+  const [isOpen, setIsOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
+  const [themeDropdownOpen, setThemeDropdownOpen] = useState(false);
+  const [activeSection, setActiveSection] = useState("");
+  const { theme, setTheme } = useTheme();
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50)
+      setIsScrolled(window.scrollY > 50);
 
       // Update active section based on scroll position
-      const sections = ["features", "pricing", "testimonials", "faq"]
+      const sections = ["features", "pricing", "testimonials", "faq"];
       const currentSection = sections.find((section) => {
-        const element = document.getElementById(section)
+        const element = document.getElementById(section);
         if (element) {
-          const rect = element.getBoundingClientRect()
-          return rect.top <= 100 && rect.bottom >= 100
+          const rect = element.getBoundingClientRect();
+          return rect.top <= 100 && rect.bottom >= 100;
         }
-        return false
-      })
-      setActiveSection(currentSection || "")
-    }
+        return false;
+      });
+      setActiveSection(currentSection || "");
+    };
 
-    window.addEventListener("scroll", handleScroll)
-    return () => window.removeEventListener("scroll", handleScroll)
-  }, [])
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   const navItems = [
     { name: "Features", href: "#features", id: "features" },
     { name: "Pricing", href: "#pricing", id: "pricing" },
     { name: "Testimonials", href: "#testimonials", id: "testimonials" },
     { name: "FAQ", href: "#faq", id: "faq" },
-  ]
+  ];
 
   const themeOptions = [
     { name: "Light", value: "light", icon: Sun },
     { name: "Dark", value: "dark", icon: Moon },
     { name: "System", value: "system", icon: Monitor },
-  ]
+  ];
 
   return (
     <>
@@ -97,44 +97,6 @@ export function Navigation() {
             </div>
 
             {/* Theme Toggle */}
-            <div className="relative">
-              <button
-                onClick={() => setThemeDropdownOpen(!themeDropdownOpen)}
-                className="relative p-2 rounded-full transition-all duration-300 group text-gray-700 dark:text-gray-300 hover:text-white"
-              >
-                {/* Gradient hover background */}
-                <div className="absolute inset-0 bg-gradient-to-r from-blue-600 to-purple-600 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-
-                <div className="relative z-10">
-                  {theme === "light" && <Sun className="h-4 w-4" />}
-                  {theme === "dark" && <Moon className="h-4 w-4" />}
-                  {theme === "system" && <Monitor className="h-4 w-4" />}
-                </div>
-              </button>
-
-              {themeDropdownOpen && (
-                <div className="absolute top-full mt-3 right-0 w-48 py-2 bg-blue-900/90 dark:bg-blue-900/90 backdrop-blur-xl rounded-2xl border border-blue-800/50 dark:border-blue-700/50 shadow-2xl animate-slide-in">
-                  {themeOptions.map((option) => {
-                    const IconComponent = option.icon
-                    return (
-                      <button
-                        key={option.value}
-                        onClick={() => {
-                          setTheme(option.value)
-                          setThemeDropdownOpen(false)
-                        }}
-                        className={`w-full px-4 py-3 text-left text-sm flex items-center space-x-3 hover:bg-blue-800/50 dark:hover:bg-blue-800/50 transition-colors rounded-xl mx-2 ${
-                          theme === option.value ? "bg-blue-800/30 text-blue-100" : "text-blue-200 hover:text-blue-100"
-                        }`}
-                      >
-                        <IconComponent className="h-4 w-4" />
-                        <span>{option.name}</span>
-                      </button>
-                    )
-                  })}
-                </div>
-              )}
-            </div>
 
             {/* Action Buttons */}
             <div className="flex items-center space-x-3">
@@ -168,7 +130,9 @@ export function Navigation() {
           {/* Gradient hover background */}
           <div className="absolute inset-0 bg-gradient-to-r from-blue-600 to-purple-600 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
 
-          <div className="relative z-10">{isOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}</div>
+          <div className="relative z-10">
+            {isOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+          </div>
         </button>
       </div>
 
@@ -209,7 +173,7 @@ export function Navigation() {
                     Theme
                   </p>
                   {themeOptions.map((option) => {
-                    const IconComponent = option.icon
+                    const IconComponent = option.icon;
                     return (
                       <button
                         key={option.value}
@@ -236,7 +200,7 @@ export function Navigation() {
                           <span>{option.name}</span>
                         </div>
                       </button>
-                    )
+                    );
                   })}
                 </div>
               </div>
@@ -264,5 +228,5 @@ export function Navigation() {
         </div>
       )}
     </>
-  )
+  );
 }
