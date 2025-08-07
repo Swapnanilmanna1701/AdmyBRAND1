@@ -39,7 +39,7 @@ export function RoiCalculatorSection() {
   }, [monthlySpend, teamSize, manualHours]);
 
   return (
-    <section className="w-full py-12 md:py-24 lg:py-32 bg-gray-50 dark:bg-gray-900">
+    <section className="w-full py-12 md:py-24 lg:py-32 bg-gradient-to-br from-blue-50 via-purple-50 to-pink-50 dark:bg-gradient-to-br dark:from-black dark:via-black dark:to-black">
       <div className="container px-4 md:px-6">
         <div className="flex flex-col items-center justify-center space-y-4 text-center">
           <div className="space-y-2">
@@ -53,33 +53,32 @@ export function RoiCalculatorSection() {
           </div>
         </div>
         <div className="mx-auto grid max-w-5xl items-start gap-8 py-12 lg:grid-cols-2 lg:gap-12">
-          <Card className="p-6">
+          <Card className="p-6 dark:bg-gray-900/50 group hover:shadow-[0_10px_20px_rgba(130,129,134,0.3)] transition-all duration-300 transform hover:-translate-y-2 border-0 glass dark-card-bg shadow-[0_5px_15px_rgba(130,129,134,0.3)] border-gray-600">
             <CardHeader>
               <CardTitle>Input Your Data</CardTitle>
             </CardHeader>
             <CardContent className="grid gap-4">
               <div className="grid gap-2">
                 <Label htmlFor="monthly-spend">Monthly Marketing Spend</Label>
-                <div className="relative">
-                  <span className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-500">
-                    $
-                  </span>
+                <div className="relative border-none rounded-lg">
+                  <span className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-500"></span>
                   <Input
                     id="monthly-spend"
                     type="number"
                     value={monthlySpend}
                     onChange={(e) => setMonthlySpend(Number(e.target.value))}
-                    className="pl-8"
+                    className="shadow-[0_5px_5px_rgba(130,129,134,0.7)] hover:shadow-[0_5px_15px_rgba(130,129,134,0.7)] border-none rounded-lg"
                   />
                 </div>
               </div>
-              <div className="grid gap-2">
+              <div className="grid gap-2 ">
                 <Label htmlFor="team-size">Marketing Team Size</Label>
                 <Input
                   id="team-size"
                   type="number"
                   value={teamSize}
                   onChange={(e) => setTeamSize(Number(e.target.value))}
+                  className="shadow-[0_5px_5px_rgba(130,129,134,0.7)] hover:shadow-[0_5px_15px_rgba(130,129,134,0.7)] border-none rounded-lg"
                 />
               </div>
               <div className="grid gap-2">
@@ -88,6 +87,7 @@ export function RoiCalculatorSection() {
                 </Label>
                 <Input
                   id="manual-hours"
+                  className="shadow-[0_5px_5px_rgba(130,129,134,0.7)] hover:shadow-[0_5px_15px_rgba(130,129,134,0.7)] border-none rounded-lg"
                   type="number"
                   value={manualHours}
                   onChange={(e) => setManualHours(Number(e.target.value))}
@@ -95,7 +95,7 @@ export function RoiCalculatorSection() {
               </div>
             </CardContent>
           </Card>
-          <Card className="p-6">
+          <Card className="p-6 dark:bg-gray-900/50 group hover:shadow-[0_10px_20px_rgba(130,129,134,0.3)] transition-all duration-300 transform hover:-translate-y-2 border-0 glass dark-card-bg shadow-[0_5px_15px_rgba(130,129,134,0.3)]">
             <CardHeader>
               <CardTitle>Your Projected Annual Savings</CardTitle>
             </CardHeader>

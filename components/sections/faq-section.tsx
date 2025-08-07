@@ -42,7 +42,10 @@ export function FAQSection() {
   ];
 
   return (
-    <section id="faq" className="py-24 px-4 sm:px-6 lg:px-8">
+    <section
+      id="faq"
+      className="py-24 px-4 sm:px-6 lg:px-8 min-h-screen bg-gradient-to-br from-blue-50 via-purple-50 to-pink-50 dark:bg-gradient-to-br dark:from-black dark:via-black dark:to-black"
+    >
       <div className="max-w-4xl mx-auto">
         {/* Header */}
         <div className="text-center mb-16">
@@ -93,7 +96,7 @@ export function FAQSection() {
           </p>
 
           <div className="grid md:grid-cols-3 gap-6">
-            <Card className="glass border-0 hover:shadow-lg transition-all duration-300">
+            <Card className="glass dark:bg-gray-900/50 group hover:shadow-[0_10px_20px_rgba(130,129,134,0.3)] transition-all duration-300 transform hover:-translate-y-2 border-0 glass dark-card-bg shadow-[0_15px_15px_rgba(130,129,134,0.5)] border-gray-600">
               <CardContent className="p-6 text-center">
                 <div className="w-12 h-12 bg-gradient-to-r from-blue-500 to-indigo-600 rounded-xl flex items-center justify-center mx-auto mb-4 shadow-lg">
                   <MessageCircle className="h-6 w-6 text-white" />
@@ -107,7 +110,7 @@ export function FAQSection() {
               </CardContent>
             </Card>
 
-            <Card className="glass border-0 hover:shadow-lg transition-all duration-300">
+            <Card className="glass dark:bg-gray-900/50 group hover:shadow-[0_10px_20px_rgba(130,129,134,0.7)] transition-all duration-300 transform hover:-translate-y-2 border-0 glass dark-card-bg shadow-[0_15px_15px_rgba(130,129,134,0.5)] border-gray-600">
               <CardContent className="p-6 text-center">
                 <div className="w-12 h-12 bg-gradient-to-r from-purple-500 to-pink-600 rounded-xl flex items-center justify-center mx-auto mb-4 shadow-lg">
                   <Mail className="h-6 w-6 text-white" />
@@ -121,7 +124,7 @@ export function FAQSection() {
               </CardContent>
             </Card>
 
-            <Card className="glass border-0 hover:shadow-lg transition-all duration-300">
+            <Card className="glass dark:bg-gray-900/50 group hover:shadow-[0_10px_20px_rgba(130,129,134,0.3)] transition-all duration-300 transform hover:-translate-y-2 border-0 glass dark-card-bg shadow-[0_15px_15px_rgba(130,129,134,0.5)] border-gray-600">
               <CardContent className="p-6 text-center">
                 <div className="w-12 h-12 bg-gradient-to-r from-green-500 to-emerald-600 rounded-xl flex items-center justify-center mx-auto mb-4 shadow-lg">
                   <Phone className="h-6 w-6 text-white" />

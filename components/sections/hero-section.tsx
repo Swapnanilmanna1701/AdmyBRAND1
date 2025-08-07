@@ -1,43 +1,51 @@
-"use client"
+"use client";
 
-import { useState, useEffect, useRef } from "react"
-import { Button } from "@/components/ui/button"
-import { Sparkles, Play, ArrowRight, TrendingUp, Users, Zap, Brain, Rocket, Target } from 'lucide-react'
+import { Button } from "@/components/ui/button";
+import {
+  ArrowRight,
+  Play,
+  Sparkles,
+  Target,
+  TrendingUp,
+  Users,
+  Zap,
+} from "lucide-react";
+import { useEffect, useRef, useState } from "react";
 
 interface Particle {
-  id: number
-  x: number
-  y: number
-  targetX: number
-  targetY: number
-  size: number
-  opacity: number
-  speed: number
+  id: number;
+  x: number;
+  y: number;
+  targetX: number;
+  targetY: number;
+  size: number;
+  opacity: number;
+  speed: number;
 }
 
 export function HeroSection() {
-  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 })
-  const [isVisible, setIsVisible] = useState(false)
-  const containerRef = useRef<HTMLDivElement>(null)
+  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+  const [isVisible, setIsVisible] = useState(false);
+  const containerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    setIsVisible(true)
+    setIsVisible(true);
 
     const handleMouseMove = (e: MouseEvent) => {
-      const rect = containerRef.current?.getBoundingClientRect()
+      const rect = containerRef.current?.getBoundingClientRect();
       if (rect) {
-        const x = e.clientX - rect.left
-        const y = e.clientY - rect.top
-        setMousePosition({ x, y })
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+        setMousePosition({ x, y });
       }
-    }
+    };
 
-    window.addEventListener("mousemove", handleMouseMove)
+    window.addEventListener("mousemove", handleMouseMove);
 
     return () => {
-      window.removeEventListener("mousemove", handleMouseMove)
-    }
-  }, [])
+      window.removeEventListener("mousemove", handleMouseMove);
+    };
+  }, []);
 
   return (
     <section
@@ -50,7 +58,7 @@ export function HeroSection() {
         <div className="absolute inset-0 bg-gradient-to-br from-blue-50 via-purple-50 to-pink-50 dark:from-gray-900 dark:via-blue-900/20 dark:to-purple-900/20"></div>
 
         {/* Animated Grid Pattern */}
-        <div 
+        <div
           className="absolute inset-0 opacity-20 dark:opacity-10"
           style={{
             backgroundImage: `
@@ -63,7 +71,7 @@ export function HeroSection() {
         ></div>
 
         {/* Secondary Grid Layer for Depth */}
-        <div 
+        <div
           className="absolute inset-0 opacity-10 dark:opacity-5"
           style={{
             backgroundImage: `
@@ -98,18 +106,21 @@ export function HeroSection() {
 
         {/* Subtle Animated Rays */}
         <div className="absolute inset-0 opacity-30 dark:opacity-20">
-          <div 
+          <div
             className="absolute top-0 left-1/2 w-px h-full bg-gradient-to-b from-transparent via-blue-300/50 to-transparent transform -translate-x-1/2"
             style={{ animation: "fadeInOut 8s ease-in-out infinite" }}
           ></div>
-          <div 
+          <div
             className="absolute top-1/2 left-0 w-full h-px bg-gradient-to-r from-transparent via-blue-300/50 to-transparent transform -translate-y-1/2"
-            style={{ animation: "fadeInOut 10s ease-in-out infinite", animationDelay: "2s" }}
+            style={{
+              animation: "fadeInOut 10s ease-in-out infinite",
+              animationDelay: "2s",
+            }}
           ></div>
         </div>
 
         {/* Mouse-responsive Grid Distortion */}
-        <div 
+        <div
           className="absolute inset-0 opacity-15 dark:opacity-8 pointer-events-none"
           style={{
             backgroundImage: `
@@ -150,7 +161,9 @@ export function HeroSection() {
               Transform
             </span>
           </span>
-          <span className="block mb-4 text-gray-900 dark:text-white">Your Marketing</span>
+          <span className="block mb-4 text-gray-900 dark:text-white">
+            Your Marketing
+          </span>
           <span className="block">
             <span className="bg-gradient-to-r from-blue-700 via-blue-500 to-blue-600 bg-clip-text text-transparent">
               with AI Power
@@ -164,7 +177,8 @@ export function HeroSection() {
             isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
           }`}
         >
-          Harness the power of artificial intelligence to automate campaigns, analyze performance, and scale your brand
+          Harness the power of artificial intelligence to automate campaigns,
+          analyze performance, and scale your brand
           <span className="bg-gradient-to-r from-blue-600 to-blue-700 bg-clip-text text-transparent font-semibold">
             {" "}
             10x faster
@@ -179,14 +193,38 @@ export function HeroSection() {
           }`}
         >
           {[
-            { value: "300%", label: "ROI Increase", icon: TrendingUp, color: "from-blue-500 to-blue-600" },
-            { value: "50K+", label: "Active Users", icon: Users, color: "from-blue-500 to-indigo-600" },
-            { value: "24/7", label: "AI Automation", icon: Zap, color: "from-cyan-500 to-blue-600" },
-            { value: "99.9%", label: "Uptime", icon: Target, color: "from-blue-600 to-blue-700" },
+            {
+              value: "300%",
+              label: "ROI Increase",
+              icon: TrendingUp,
+              color: "from-blue-500 to-blue-600",
+            },
+            {
+              value: "50K+",
+              label: "Active Users",
+              icon: Users,
+              color: "from-blue-500 to-indigo-600",
+            },
+            {
+              value: "24/7",
+              label: "AI Automation",
+              icon: Zap,
+              color: "from-cyan-500 to-blue-600",
+            },
+            {
+              value: "99.9%",
+              label: "Uptime",
+              icon: Target,
+              color: "from-blue-600 to-blue-700",
+            },
           ].map((stat, index) => {
-            const IconComponent = stat.icon
+            const IconComponent = stat.icon;
             return (
-              <div key={index} className="group cursor-pointer" style={{ animationDelay: `${0.8 + index * 0.1}s` }}>
+              <div
+                key={index}
+                className="group cursor-pointer"
+                style={{ animationDelay: `${0.8 + index * 0.1}s` }}
+              >
                 <div className="glass rounded-3xl p-6 hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 border border-white/20 dark:border-gray-700/20">
                   <div
                     className={`w-12 h-12 bg-gradient-to-r ${stat.color} rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-lg group-hover:shadow-xl transition-shadow duration-300`}
@@ -196,10 +234,12 @@ export function HeroSection() {
                   <div className="text-3xl font-bold bg-gradient-to-r from-gray-900 to-gray-700 dark:from-white dark:to-gray-300 bg-clip-text text-transparent mb-2">
                     {stat.value}
                   </div>
-                  <div className="text-sm text-gray-600 dark:text-gray-400 font-medium">{stat.label}</div>
+                  <div className="text-sm text-gray-600 dark:text-gray-400 font-medium">
+                    {stat.label}
+                  </div>
                 </div>
               </div>
-            )
+            );
           })}
         </div>
 
@@ -220,7 +260,6 @@ export function HeroSection() {
           </Button>
 
           <Button
-            variant="outline"
             size="lg"
             className="group px-8 py-4 text-lg font-semibold rounded-2xl glass border-2 border-blue-500/30 hover:border-blue-500/50 hover:shadow-2xl transition-all duration-300 transform hover:scale-105 bg-transparent backdrop-blur-xl"
           >
@@ -235,17 +274,21 @@ export function HeroSection() {
             isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
           }`}
         >
-          <p className="text-sm text-gray-500 dark:text-gray-400 mb-6">Trusted by innovative companies worldwide</p>
+          <p className="text-sm text-gray-500 dark:text-gray-400 mb-6">
+            Trusted by innovative companies worldwide
+          </p>
           <div className="flex flex-wrap justify-center items-center gap-8 opacity-60">
-            {["Google", "Microsoft", "Shopify", "HubSpot", "Salesforce"].map((company, index) => (
-              <div
-                key={company}
-                className="text-2xl font-bold text-gray-400 hover:text-gray-600 dark:hover:text-gray-300 transition-colors duration-300 cursor-pointer"
-                style={{ animationDelay: `${1.2 + index * 0.1}s` }}
-              >
-                {company}
-              </div>
-            ))}
+            {["Google", "Microsoft", "Shopify", "HubSpot", "Salesforce"].map(
+              (company, index) => (
+                <div
+                  key={company}
+                  className="text-2xl font-bold text-gray-400 hover:text-gray-600 dark:hover:text-gray-300 transition-colors duration-300 cursor-pointer"
+                  style={{ animationDelay: `${1.2 + index * 0.1}s` }}
+                >
+                  {company}
+                </div>
+              )
+            )}
           </div>
         </div>
 
@@ -257,5 +300,5 @@ export function HeroSection() {
         </div>
       </div>
     </section>
-  )
+  );
 }

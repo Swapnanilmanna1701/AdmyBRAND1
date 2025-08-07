@@ -60,7 +60,7 @@ export function TestimonialsSection() {
   return (
     <section
       id="testimonials"
-      className="relative py-24 bg-white overflow-hidden"
+      className="relative py-24 bg-gradient-to-br from-blue-50 via-purple-50 to-pink-50 dark:bg-gradient-to-br dark:from-black dark:via-black dark:to-black overflow-hidden"
     >
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}

@@ -163,7 +163,7 @@ const ContactSection: React.FC = () => {
     return (
       <section
         id="contact"
-        className="py-20 min-h-screen bg-gradient-to-br from-blue-50 via-purple-50 to-pink-50 dark:bg-gradient-to-br dark:from-black dark:via-gray-900 dark:to-gray-800"
+        className="py-20 min-h-screen bg-gradient-to-br from-blue-50 via-purple-50 to-pink-50 dark:bg-gradient-to-br dark:from-black dark:via-black dark:to-black"
       >
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <div className="bg-white dark:bg-gray-900 rounded-3xl p-12 border border-gray-100 dark:border-gray-800 shadow-[0_20px_70px_rgba(0,0,0,0.08)] hover:shadow-[0_25px_80px_rgba(0,0,0,0.12)] transition-all duration-300">
@@ -251,11 +251,11 @@ const ContactSection: React.FC = () => {
   return (
     <section
       id="contact"
-      className="py-20 min-h-screen bg-gradient-to-br from-blue-50 via-purple-50 to-pink-50 dark:bg-gradient-to-br dark:from-black dark:via-gray-900 dark:to-gray-800"
+      className="py-20 min-h-screen bg-gradient-to-br from-blue-50 via-purple-50 to-pink-50 dark:bg-gradient-to-br dark:from-black dark:via-black dark:to-black"
     >
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         {countdown && (
-          <div className="bg-white dark:bg-gray-900/50 border border-orange-200 dark:border-orange-500/30 rounded-2xl p-6 mb-12 text-center shadow-[0_8px_30px_rgba(255,165,0,0.15)] hover:shadow-[0_12px_40px_rgba(255,165,0,0.2)] transition-all duration-300">
+          <div className="bg-white dark:bg-gray-900/50 border border-blue-700 dark:border-blue-700 rounded-2xl p-6 mb-12 text-center shadow-[0_8px_30px_rgba(0,112,255,0.5)] hover:shadow-[0_12px_40px_rgba(118,59,238,0.75)] transition-all duration-300">
             <div className="flex items-center justify-center space-x-4 mb-3">
               <div className="w-10 h-10 bg-orange-100 dark:bg-orange-500/10 rounded-full flex items-center justify-center">
                 <Icon name="Clock" size={20} className="text-orange-600" />
@@ -269,16 +269,16 @@ const ContactSection: React.FC = () => {
                 Offer expires in:
               </span>
               <div className="flex space-x-3">
-                <div className="bg-gray-900 text-white px-3 py-2 rounded-lg font-mono text-sm min-w-[3rem] text-center">
+                <div className="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-3 py-2 rounded-lg font-mono text-sm min-w-[3rem] text-center">
                   {countdown.days}d
                 </div>
-                <div className="bg-gray-900 text-white px-3 py-2 rounded-lg font-mono text-sm min-w-[3rem] text-center">
+                <div className="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-3 py-2 rounded-lg font-mono text-sm min-w-[3rem] text-center">
                   {countdown.hours}h
                 </div>
-                <div className="bg-gray-900 text-white px-3 py-2 rounded-lg font-mono text-sm min-w-[3rem] text-center">
+                <div className="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-3 py-2 rounded-lg font-mono text-sm min-w-[3rem] text-center">
                   {countdown.minutes}m
                 </div>
-                <div className="bg-gray-900 text-white px-3 py-2 rounded-lg font-mono text-sm min-w-[3rem] text-center">
+                <div className="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-3 py-2 rounded-lg font-mono text-sm min-w-[3rem] text-center">
                   {countdown.seconds}s
                 </div>
               </div>

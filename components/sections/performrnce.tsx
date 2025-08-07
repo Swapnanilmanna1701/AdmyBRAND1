@@ -174,7 +174,7 @@ export function PerformanceOptimizationSection() {
   const selectedChannel = channels.find((c) => c.id === selectedChannelId);
 
   return (
-    <section id="performance" className="py-24 bg-white dark:bg-black">
+    <section id="performance" className="py-24 ">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
