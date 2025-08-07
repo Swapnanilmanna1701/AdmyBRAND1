@@ -1,13 +1,13 @@
-"use client"
+"use client";
 
-import { useState } from "react"
-import { Card, CardContent, CardHeader } from "@/components/ui/card"
-import { Button } from "@/components/ui/button"
-import { Badge } from "@/components/ui/badge"
-import { Check, Sparkles, Crown, Rocket, Calculator } from "lucide-react"
+import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent, CardHeader } from "@/components/ui/card";
+import { Check, Crown, Rocket, Sparkles } from "lucide-react";
+import { useState } from "react";
 
 export function PricingSection() {
-  const [isAnnual, setIsAnnual] = useState(false)
+  const [isAnnual, setIsAnnual] = useState(false);
 
   const plans = [
     {
@@ -65,15 +65,15 @@ export function PricingSection() {
       ],
       popular: false,
     },
-  ]
+  ];
 
   const calculateSavings = (monthly: number, annual: number) => {
-    const monthlyCost = monthly * 12
-    const annualCost = annual * 12
-    const savings = monthlyCost - annualCost
-    const percentage = Math.round((savings / monthlyCost) * 100)
-    return { savings, percentage }
-  }
+    const monthlyCost = monthly * 12;
+    const annualCost = annual * 12;
+    const savings = monthlyCost - annualCost;
+    const percentage = Math.round((savings / monthlyCost) * 100);
+    return { savings, percentage };
+  };
 
   return (
     <section id="pricing" className="py-24 px-4 sm:px-6 lg:px-8">
@@ -85,16 +85,14 @@ export function PricingSection() {
             <span className="gradient-text"> Transparent Pricing</span>
           </h2>
           <p className="text-lg sm:text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto mb-8">
-            Choose the perfect plan for your business. All plans include our core AI features with no hidden fees.
+            Choose the perfect plan for your business. All plans include our
+            core AI features with no hidden fees.
           </p>
 
           {/* Pricing Calculator Toggle */}
           <div className="flex items-center justify-center mb-8">
-            <div className="glass rounded-2xl p-2 flex items-center space-x-4">
-              <div className="flex items-center">
-                <Calculator className="h-5 w-5 text-blue-600 mr-2" />
-                <span className="text-sm font-medium text-gray-700 dark:text-gray-300">Pricing Calculator</span>
-              </div>
+            <div className="glass rounded-2xl p-0.2 flex items-center space-x-4">
+              <div className="flex items-center"></div>
 
               <div className="flex items-center bg-white/20 dark:bg-gray-800/20 rounded-xl p-1">
                 <button
@@ -116,9 +114,6 @@ export function PricingSection() {
                   }`}
                 >
                   Annual
-                  <Badge className="absolute -top-2 -right-2 bg-green-500 text-white text-xs px-1.5 py-0.5">
-                    Save 20%
-                  </Badge>
                 </button>
               </div>
             </div>
@@ -127,17 +122,28 @@ export function PricingSection() {
           {/* Savings Calculator Display */}
           {isAnnual && (
             <div className="glass rounded-2xl p-6 max-w-2xl mx-auto mb-8">
-              <h3 className="text-lg font-semibold mb-4 gradient-text">Annual Savings Calculator</h3>
+              <h3 className="text-lg font-semibold mb-4 gradient-text">
+                Annual Savings Calculator
+              </h3>
               <div className="grid md:grid-cols-3 gap-4">
                 {plans.map((plan) => {
-                  const { savings, percentage } = calculateSavings(plan.monthlyPrice, plan.annualPrice)
+                  const { savings, percentage } = calculateSavings(
+                    plan.monthlyPrice,
+                    plan.annualPrice
+                  );
                   return (
                     <div key={plan.name} className="text-center">
-                      <div className="text-sm text-gray-600 dark:text-gray-400 mb-1">{plan.name}</div>
-                      <div className="text-2xl font-bold text-green-600 mb-1">${savings}</div>
-                      <div className="text-xs text-gray-500 dark:text-gray-400">saved per year ({percentage}% off)</div>
+                      <div className="text-sm text-gray-600 dark:text-gray-400 mb-1">
+                        {plan.name}
+                      </div>
+                      <div className="text-2xl font-bold text-green-600 mb-1">
+                        ${savings}
+                      </div>
+                      <div className="text-xs text-gray-500 dark:text-gray-400">
+                        saved per year ({percentage}% off)
+                      </div>
                     </div>
-                  )
+                  );
                 })}
               </div>
             </div>
@@ -147,16 +153,23 @@ export function PricingSection() {
         {/* Pricing Cards */}
         <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
           {plans.map((plan, index) => {
-            const IconComponent = plan.icon
-            const currentPrice = isAnnual ? plan.annualPrice : plan.monthlyPrice
-            const originalPrice = isAnnual ? plan.monthlyPrice : null
-            const { savings, percentage } = calculateSavings(plan.monthlyPrice, plan.annualPrice)
+            const IconComponent = plan.icon;
+            const currentPrice = isAnnual
+              ? plan.annualPrice
+              : plan.monthlyPrice;
+            const originalPrice = isAnnual ? plan.monthlyPrice : null;
+            const { savings, percentage } = calculateSavings(
+              plan.monthlyPrice,
+              plan.annualPrice
+            );
 
             return (
               <Card
                 key={index}
                 className={`relative group hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 border-0 glass dark-card-bg ${
-                  plan.popular ? "ring-2 ring-purple-500 ring-opacity-50 scale-105" : ""
+                  plan.popular
+                    ? "ring-2 ring-purple-600 ring-opacity-50 scale-105"
+                    : ""
                 }`}
               >
                 {plan.popular && (
@@ -169,7 +182,9 @@ export function PricingSection() {
 
                 {isAnnual && (
                   <div className="absolute -top-2 -right-2">
-                    <Badge className="bg-green-500 text-white px-3 py-1">Save ${savings}/year</Badge>
+                    <Badge className="bg-green-500 text-white px-3 py-1">
+                      Save ${savings}/year
+                    </Badge>
                   </div>
                 )}
 
@@ -181,13 +196,21 @@ export function PricingSection() {
                       <IconComponent className="h-8 w-8 text-white" />
                     </div>
                   </div>
-                  <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-2">{plan.name}</h3>
-                  <p className="text-gray-600 dark:text-gray-300 mb-4">{plan.description}</p>
+                  <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-2">
+                    {plan.name}
+                  </h3>
+                  <p className="text-gray-600 dark:text-gray-300 mb-4">
+                    {plan.description}
+                  </p>
 
                   {/* Price Display */}
                   <div className="flex items-baseline justify-center mb-2">
-                    <span className="text-4xl font-bold gradient-text">${currentPrice}</span>
-                    <span className="text-gray-600 dark:text-gray-400 ml-1">/month</span>
+                    <span className="text-4xl font-bold gradient-text">
+                      ${currentPrice}
+                    </span>
+                    <span className="text-gray-600 dark:text-gray-400 ml-1">
+                      /month
+                    </span>
                   </div>
 
                   {/* Original Price and Savings */}
@@ -197,7 +220,8 @@ export function PricingSection() {
                         Was ${originalPrice}/month
                       </div>
                       <div className="text-sm text-green-600 font-medium">
-                        {percentage}% off • Billed annually (${currentPrice * 12}/year)
+                        {percentage}% off • Billed annually ($
+                        {currentPrice * 12}/year)
                       </div>
                     </div>
                   )}
@@ -216,7 +240,9 @@ export function PricingSection() {
                         <div className="w-5 h-5 bg-gradient-to-r from-green-500 to-emerald-600 rounded-full flex items-center justify-center mr-3 flex-shrink-0">
                           <Check className="h-3 w-3 text-white" />
                         </div>
-                        <span className="text-gray-700 dark:text-gray-300">{feature}</span>
+                        <span className="text-gray-700 dark:text-gray-300">
+                          {feature}
+                        </span>
                       </li>
                     ))}
                   </ul>
@@ -245,16 +271,19 @@ export function PricingSection() {
                   </div>
                 </CardContent>
               </Card>
-            )
+            );
           })}
         </div>
 
         {/* Pricing Calculator Summary */}
-        <div className="mt-16 glass rounded-3xl p-8 max-w-4xl mx-auto">
+        <div className="mt-16 glass rounded-3xl p-8 max-w-4xl mx-auto group hover:shadow-[0_10px_20px_rgba(130,129,134,0.3)] transition-all duration-300 transform hover:-translate-y-2 border-0 glass dark-card-bg shadow-[0_5px_15px_rgba(130,129,134,0.3)] border-gray-600">
           <div className="text-center mb-6">
-            <h3 className="text-2xl font-bold gradient-text mb-2">Pricing Calculator Summary</h3>
+            <h3 className="text-2xl font-bold gradient-text dark:gradient-text mb-2">
+              Pricing Calculator Summary
+            </h3>
             <p className="text-gray-600 dark:text-gray-300">
-              Compare your savings with our {isAnnual ? "annual" : "monthly"} billing
+              Compare your savings with our {isAnnual ? "annual" : "monthly"}{" "}
+              billing
             </p>
           </div>
 
@@ -268,9 +297,16 @@ export function PricingSection() {
               </div>
               <div className="space-y-2">
                 {plans.map((plan) => (
-                  <div key={plan.name} className="flex justify-between items-center">
-                    <span className="text-sm text-gray-600 dark:text-gray-400">{plan.name}:</span>
-                    <span className="font-semibold">${isAnnual ? plan.annualPrice : plan.monthlyPrice}/month</span>
+                  <div
+                    key={plan.name}
+                    className="flex justify-between items-center"
+                  >
+                    <span className="text-sm text-gray-600 dark:text-gray-400">
+                      {plan.name}:
+                    </span>
+                    <span className="font-semibold">
+                      ${isAnnual ? plan.annualPrice : plan.monthlyPrice}/month
+                    </span>
                   </div>
                 ))}
               </div>
@@ -285,15 +321,23 @@ export function PricingSection() {
               </div>
               <div className="space-y-2">
                 {plans.map((plan) => {
-                  const { savings, percentage } = calculateSavings(plan.monthlyPrice, plan.annualPrice)
+                  const { savings, percentage } = calculateSavings(
+                    plan.monthlyPrice,
+                    plan.annualPrice
+                  );
                   return (
-                    <div key={plan.name} className="flex justify-between items-center">
-                      <span className="text-sm text-gray-600 dark:text-gray-400">{plan.name}:</span>
+                    <div
+                      key={plan.name}
+                      className="flex justify-between items-center"
+                    >
+                      <span className="text-sm text-gray-600 dark:text-gray-400">
+                        {plan.name}:
+                      </span>
                       <span className="font-semibold text-green-600">
                         ${savings}/year ({percentage}% off)
                       </span>
                     </div>
-                  )
+                  );
                 })}
               </div>
             </div>
@@ -303,7 +347,8 @@ export function PricingSection() {
         {/* Bottom Note */}
         <div className="text-center mt-12">
           <p className="text-gray-600 dark:text-gray-400 mb-4">
-            All plans include a 14-day free trial. No credit card required. Cancel anytime.
+            All plans include a 14-day free trial. No credit card required.
+            Cancel anytime.
           </p>
           <div className="flex flex-wrap justify-center gap-4 text-sm text-gray-500 dark:text-gray-400">
             <span>✓ No setup fees</span>
@@ -314,5 +359,5 @@ export function PricingSection() {
         </div>
       </div>
     </section>
-  )
+  );
 }

@@ -65,7 +65,7 @@ export function FeaturesSection() {
             return (
               <Card
                 key={index}
-                className="group hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 border-0 glass dark-card-bg"
+                className="group hover:shadow-[0_10px_20px_rgba(130,129,134,0.3)] transition-all duration-300 transform hover:-translate-y-2 border-0 glass dark-card-bg shadow-[0_5px_15px_rgba(130,129,134,0.5)] border-gray-600"
               >
                 <CardContent className="p-8">
                   <div className="mb-6">
