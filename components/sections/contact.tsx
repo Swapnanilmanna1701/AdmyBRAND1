@@ -309,9 +309,10 @@ const ContactSection: React.FC = () => {
 
             <div className="bg-white dark:bg-gray-900/50 rounded-3xl p-8 border border-gray-100 dark:border-gray-800 shadow-[0_20px_70px_rgba(0,0,0,0.08)] hover:shadow-[0_25px_80px_rgba(0,0,0,0.12)] transition-all duration-300">
               <form onSubmit={handleSubmit} className="space-y-6">
-                <div className="grid md:grid-cols-2 gap-6">
+                <div className="grid md:grid-cols-2 gap-6 ">
                   <Input
                     label="First Name"
+                    className="shadow-[0_5px_5px_rgba(130,129,134,0.7)] hover:shadow-[0_5px_15px_rgba(130,129,134,0.7)] border"
                     type="text"
                     value={formData.firstName}
                     onChange={(e: ChangeEvent<HTMLInputElement>) =>
@@ -323,6 +324,7 @@ const ContactSection: React.FC = () => {
                   />
                   <Input
                     label="Last Name"
+                    className="shadow-[0_5px_5px_rgba(130,129,134,0.7)] hover:shadow-[0_5px_15px_rgba(130,129,134,0.7)] border"
                     type="text"
                     value={formData.lastName}
                     onChange={(e: ChangeEvent<HTMLInputElement>) =>
@@ -336,6 +338,7 @@ const ContactSection: React.FC = () => {
 
                 <Input
                   label="Work Email"
+                  className="shadow-[0_5px_5px_rgba(130,129,134,0.7)] hover:shadow-[0_5px_15px_rgba(130,129,134,0.7)] border"
                   type="email"
                   value={formData.email}
                   onChange={(e: ChangeEvent<HTMLInputElement>) =>
@@ -350,6 +353,7 @@ const ContactSection: React.FC = () => {
                 <div className="grid md:grid-cols-2 gap-6">
                   <Input
                     label="Company Name"
+                    className="shadow-[0_5px_5px_rgba(130,129,134,0.7)] hover:shadow-[0_5px_15px_rgba(130,129,134,0.7)] border"
                     type="text"
                     value={formData.company}
                     onChange={(e: ChangeEvent<HTMLInputElement>) =>
@@ -361,6 +365,7 @@ const ContactSection: React.FC = () => {
                   />
                   <Input
                     label="Job Title"
+                    className="shadow-[0_5px_5px_rgba(130,129,134,0.7)] hover:shadow-[0_5px_15px_rgba(130,129,134,0.7)] border"
                     type="text"
                     value={formData.jobTitle}
                     onChange={(e: ChangeEvent<HTMLInputElement>) =>
@@ -375,6 +380,7 @@ const ContactSection: React.FC = () => {
                 <div className="grid md:grid-cols-2 gap-6">
                   <Select
                     label="Company Size"
+                    className="glass"
                     options={companySizeOptions}
                     value={formData.companySize}
                     onChange={(value) =>
@@ -386,6 +392,7 @@ const ContactSection: React.FC = () => {
                   />
                   <Select
                     label="Monthly Ad Spend"
+                    className="glass"
                     options={monthlySpendOptions}
                     value={formData.monthlySpend}
                     onChange={(value) =>
@@ -399,6 +406,7 @@ const ContactSection: React.FC = () => {
 
                 <Input
                   label="Phone Number (Optional)"
+                  className="shadow-[0_5px_5px_rgba(130,129,134,0.7)] hover:shadow-[0_5px_15px_rgba(130,129,134,0.7)] border"
                   type="tel"
                   value={formData.phone}
                   onChange={(e: ChangeEvent<HTMLInputElement>) =>

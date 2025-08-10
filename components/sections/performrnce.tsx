@@ -185,7 +185,7 @@ export function PerformanceOptimizationSection() {
         >
           <h2 className="text-4xl md:text-5xl font-bold mb-6 text-gray-900 dark:text-white">
             Watch AI Transform Your{" "}
-            <span className="text-blue-600">Marketing Performance</span>
+            <span className="bg-gradient-to-r from-pink-500 via-violet-500 to-blue-700 bg-clip-text text-transparent">Marketing Performance</span>
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto dark:text-gray-300">
             Select your marketing channel below and see how our AI optimization
@@ -208,7 +208,7 @@ export function PerformanceOptimizationSection() {
               <Card
                 key={channel.id}
                 className={cn(
-                  "cursor-pointer glass rounded-3xl p-2 group hover:shadow-[0_10px_20px_rgba(130,129,134,0.7)] transition-all duration-300 transform hover:-translate-y-2 border-0 glass dark-card-bg shadow-[0_5px_15px_rgba(130,129,134,0.6)] dark:hover:border-blue-600",
+                  "cursor-pointer glass-nav rounded-3xl p-2 group hover:shadow-[0_10px_20px_rgba(130,129,134,0.7)] transition-all duration-300 transform hover:-translate-y-2 border-0 glass dark-card-bg shadow-[0_5px_15px_rgba(130,129,134,0.6)] dark:hover:border-blue-600",
                   selectedChannelId === channel.id
                     ? "border-2 border-blue-600 shadow-md dark:border-blue-500"
                     : "border border-gray-200 hover:border-blue-600 dark:border-gray-700 dark:hover:border-blue-600"
@@ -218,7 +218,7 @@ export function PerformanceOptimizationSection() {
               >
                 <CardContent className="flex flex-col items-center justify-center p-6">
                   <channel.icon className="w-8 h-8 text-gray-600 mb-3 dark:text-gray-300" />
-                  <p className="text-lg font-semibold text-gray-900 dark:text-white">
+                  <p className="text-lg font-semibold bg-gradient-to-r from-pink-500 via-violet-500 to-blue-700 bg-clip-text text-transparent">
                     {channel.name}
                   </p>
                   <p className="text-sm text-gray-500 dark:text-gray-400 text-center">

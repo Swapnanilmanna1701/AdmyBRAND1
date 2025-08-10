@@ -57,7 +57,7 @@ export function HeroSection() {
       {/* Animated Background with Grid */}
       <div className="absolute inset-0">
         {/* Base Gradient Background */}
-        <div className="absolute inset-0 bg-gradient-to-br from-blue-50 via-purple-50 to-pink-50 dark:from-gray-900 dark:via-blue-900/20 dark:to-purple-900/20"></div>
+        <div className="absolute inset-0 bg-gradient-to-br from-blue-50 via-purple-50 to-white-50 dark:from-gray-900 dark:via-black-900/20 dark:to-"></div>
 
         {/* Animated Grid Pattern */}
         <div
@@ -77,8 +77,8 @@ export function HeroSection() {
           className="absolute inset-0 opacity-10 dark:opacity-5"
           style={{
             backgroundImage: `
-              linear-gradient(rgba(147, 51, 234, 0.4) 1px, transparent 1px),
-              linear-gradient(90deg, rgba(147, 51, 234, 0.4) 1px, transparent 1px)
+              linear-gradient(rgba(0, 0, 0, 0.4) 1px, transparent 1px),
+              linear-gradient(90deg, rgba(0, 0, 0, 0.4) 1px, transparent 1px)
             `,
             backgroundSize: "120px 120px",
             animation: "gridMove 30s linear infinite reverse",
@@ -86,7 +86,7 @@ export function HeroSection() {
         ></div>
 
         {/* Animated Floating Orbs */}
-        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-gradient-to-r from-blue-400/20 to-blue-600/20 rounded-full blur-3xl animate-float"></div>
+        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-gradient-to-r from-blue-500/20 to-blue-600/20 rounded-full blur-3xl animate-float"></div>
         <div
           className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-gradient-to-r from-blue-500/20 to-indigo-500/20 rounded-full blur-3xl animate-float"
           style={{ animationDelay: "2s" }}
@@ -137,7 +137,7 @@ export function HeroSection() {
       </div>
 
       {/* Main Content */}
-      <div className=" z-10 max-w-1xl mx-auto text-center">
+      <div className=" z-10 max-w-1xl text-center">
         {/* Futuristic Badge */}
         <div className="mb-5">
           <AnimatedGradientTextDemo />
@@ -170,7 +170,7 @@ export function HeroSection() {
         >
           Harness the power of artificial intelligence to automate campaigns,
           analyze performance, and scale your brand
-          <span className="bg-gradient-to-r from-pink-600 via-violet-500 to-blue-700 bg-clip-text text-transparent font-semibold">
+          <span className="bg-gradient-to-r from-pink-500 via-violet-500 to-blue-700 bg-clip-text text-transparent font-semibold">
             {" "}
             10x faster
           </span>
