@@ -251,6 +251,11 @@
 
 @theme inline {
   --animate-aurora: aurora 8s ease-in-out infinite alternate;
+  @keyframes gradient {
+    to {
+      background-position: var(--bg-size, 300%) 0;
+    }
+  }
 
   @keyframes aurora {
     0% {

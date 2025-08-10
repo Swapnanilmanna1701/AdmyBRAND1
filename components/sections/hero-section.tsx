@@ -1,8 +1,8 @@
 "use client";
 
-import { Button } from "@/components/ui/button";
 import { AuroraText } from "@/components/ui/aurora-text";
-
+import { AnimatedGradientTextDemo } from "@/components/ui/banner-button";
+import { Button } from "@/components/ui/button";
 import {
   ArrowRight,
   Play,
@@ -137,19 +137,10 @@ export function HeroSection() {
       </div>
 
       {/* Main Content */}
-      <div className="relative z-10 max-w-6xl mx-auto text-center">
+      <div className=" z-10 max-w-1xl mx-auto text-center">
         {/* Futuristic Badge */}
-        <div
-          className={`inline-flex items-center px-6 py-3 rounded-full bg-gradient-to-r from-blue-500/10 to-blue-600/10 backdrop-blur-xl border border-blue-500/20 dark:border-blue-500/20 mb-8 transition-all duration-1000 ${
-            isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
-          }`}
-        >
-          <div className="w-2 h-2 bg-gradient-to-r from-blue-500 to-blue-600 rounded-full mr-3 animate-pulse"></div>
-          <Sparkles className="h-4 w-4 text-blue-600 dark:text-blue-400 mr-2" />
-          <span className="text-sm font-medium bg-gradient-to-r from-blue-600 to-blue-700 bg-clip-text text-transparent">
-            Next-Generation AI Marketing Platform
-          </span>
-          <div className="w-2 h-2 bg-gradient-to-r from-blue-600 to-blue-500 rounded-full ml-3 animate-pulse"></div>
+        <div className="mb-5">
+          <AnimatedGradientTextDemo />
         </div>
 
         {/* Main Heading */}
@@ -167,8 +158,7 @@ export function HeroSection() {
             Your Marketing with
           </span>
           <span className="block">
-            <AuroraText>Aurora Text</AuroraText>
-
+            <AuroraText>AdMyBrand</AuroraText>
           </span>
         </h1>
 
@@ -180,7 +170,7 @@ export function HeroSection() {
         >
           Harness the power of artificial intelligence to automate campaigns,
           analyze performance, and scale your brand
-          <span className="bg-gradient-to-r from-blue-600 to-blue-700 bg-clip-text text-transparent font-semibold">
+          <span className="bg-gradient-to-r from-pink-600 via-violet-500 to-blue-700 bg-clip-text text-transparent font-semibold">
             {" "}
             10x faster
           </span>
@@ -198,25 +188,25 @@ export function HeroSection() {
               value: "300%",
               label: "ROI Increase",
               icon: TrendingUp,
-              color: "from-blue-500 to-blue-600",
+              color: "from-cyan-500 to-blue-600",
             },
             {
               value: "50K+",
               label: "Active Users",
               icon: Users,
-              color: "from-blue-500 to-indigo-600",
+              color: "from-purple-500 to-pink-600 ",
             },
             {
               value: "24/7",
               label: "AI Automation",
               icon: Zap,
-              color: "from-cyan-500 to-blue-600",
+              color: "from-green-500 to-emerald-600",
             },
             {
               value: "99.9%",
               label: "Uptime",
               icon: Target,
-              color: "from-blue-600 to-blue-700",
+              color: "from-red-500 to-orange-600",
             },
           ].map((stat, index) => {
             const IconComponent = stat.icon;
@@ -270,35 +260,8 @@ export function HeroSection() {
         </div>
 
         {/* Trust Indicators */}
-        <div
-          className={`transition-all duration-1000 delay-1000 ${
-            isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
-          }`}
-        >
-          <p className="text-sm text-gray-500 dark:text-gray-400 mb-6">
-            Trusted by innovative companies worldwide
-          </p>
-          <div className="flex flex-wrap justify-center items-center gap-8 opacity-60">
-            {["Google", "Microsoft", "Shopify", "HubSpot", "Salesforce"].map(
-              (company, index) => (
-                <div
-                  key={company}
-                  className="text-2xl font-bold text-gray-400 hover:text-gray-600 dark:hover:text-gray-300 transition-colors duration-300 cursor-pointer"
-                  style={{ animationDelay: `${1.2 + index * 0.1}s` }}
-                >
-                  {company}
-                </div>
-              )
-            )}
-          </div>
-        </div>
 
         {/* Scroll Indicator */}
-        <div className="absolute bottom-12 left-1/2 transform -translate-x-1/2 animate-bounce">
-          <div className="w-6 h-10 border-2 border-gray-400 dark:border-gray-600 rounded-full flex justify-center">
-            <div className="w-1 h-3 bg-gradient-to-b from-blue-500 to-blue-600 rounded-full mt-2 animate-pulse"></div>
-          </div>
-        </div>
       </div>
     </section>
   );
