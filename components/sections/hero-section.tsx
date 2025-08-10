@@ -1,6 +1,8 @@
 "use client";
 
 import { Button } from "@/components/ui/button";
+import { AuroraText } from "@/components/ui/aurora-text";
+
 import {
   ArrowRight,
   Play,
@@ -162,12 +164,11 @@ export function HeroSection() {
             </span>
           </span>
           <span className="block mb-4 text-gray-900 dark:text-white">
-            Your Marketing
+            Your Marketing with
           </span>
           <span className="block">
-            <span className="bg-gradient-to-r from-blue-700 via-blue-500 to-blue-600 bg-clip-text text-transparent">
-              with AI Power
-            </span>
+            <AuroraText>Aurora Text</AuroraText>
+
           </span>
         </h1>
 

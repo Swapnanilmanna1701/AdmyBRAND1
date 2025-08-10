@@ -208,10 +208,10 @@ export function PerformanceOptimizationSection() {
               <Card
                 key={channel.id}
                 className={cn(
-                  "cursor-pointer transition-all duration-200",
+                  "cursor-pointer glass rounded-3xl p-2 group hover:shadow-[0_10px_20px_rgba(130,129,134,0.7)] transition-all duration-300 transform hover:-translate-y-2 border-0 glass dark-card-bg shadow-[0_5px_15px_rgba(130,129,134,0.6)] dark:hover:border-blue-600",
                   selectedChannelId === channel.id
                     ? "border-2 border-blue-600 shadow-md dark:border-blue-500"
-                    : "border border-gray-200 hover:border-blue-300 dark:border-gray-700 dark:hover:border-blue-600"
+                    : "border border-gray-200 hover:border-blue-600 dark:border-gray-700 dark:hover:border-blue-600"
                 )}
                 onClick={() => setSelectedChannelId(channel.id)}
                 hover={false} // Disable default card hover
