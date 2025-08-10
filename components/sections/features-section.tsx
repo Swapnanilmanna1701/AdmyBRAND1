@@ -1,6 +1,6 @@
 "use client";
 
-import { HoverBorderGradientDemo } from "@/components/ui/animated-button";
+//import { HoverBorderGradientDemo } from "@/components/ui/animated-button";
 import Icon from "@/components/ui/appicon";
 import { motion } from "framer-motion";
 import React, { useState } from "react";
@@ -172,10 +172,13 @@ const FeaturesSection: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="text-center mb-16">
-          <HoverBorderGradientDemo />
+          
           <h2 className="font-inter font-bold text-3xl sm:text-4xl lg:text-5xl text-foreground mb-6">
             Six Core Features That
-            <span className="block text-accent">Transform Marketing ROI</span>
+            <span className="bg-gradient-to-r from-pink-500 via-violet-500 to-blue-700 bg-clip-text text-transparent">
+                {" "}
+                Transform Marketing ROI
+              </span>
           </h2>
           <p className="font-inter text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
             Each feature is designed to eliminate manual work while delivering
@@ -450,7 +453,7 @@ const FeaturesSection: React.FC = () => {
           <div className="grid md:grid-cols-3 gap-8">
             <div className="text-center">
               <div className="w-12 h-12 bg-error/10 rounded-xl flex items-center justify-center mx-auto mb-4">
-                <Icon name="X" size={24} color="var(--color-error)" />
+                <Icon name="X" size={24} color="blue" />
               </div>
               <h4 className="font-inter font-bold text-lg text-foreground mb-2">
                 Traditional Marketing
@@ -486,7 +489,7 @@ const FeaturesSection: React.FC = () => {
 
             <div className="text-center">
               <div className="w-12 h-12 bg-success/10 rounded-xl flex items-center justify-center mx-auto mb-4">
-                <Icon name="Check" size={24} color="var(--color-success)" />
+                <Icon name="Check" size={24} color="black" />
               </div>
               <h4 className="font-inter font-bold text-lg text-foreground mb-2">
                 ADmyBRAND AI Suite

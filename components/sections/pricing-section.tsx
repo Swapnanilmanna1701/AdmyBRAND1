@@ -82,19 +82,22 @@ export function PricingSection() {
         <div className="text-center mb-16">
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6">
             <span className="text-gray-900 dark:text-white">Simple,</span>
-            <span className="gradient-text"> Transparent Pricing</span>
+            <span className="bg-gradient-to-r from-pink-500 via-violet-500 to-blue-700 bg-clip-text text-transparent">
+              {" "}
+              Transparent Pricing
+            </span>
           </h2>
-          <p className="text-lg sm:text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto mb-8">
+          <p className="text-lg sm:text-xl text-gray-900 dark:text-gray-100 max-w-3xl mx-auto mb-8">
             Choose the perfect plan for your business. All plans include our
             core AI features with no hidden fees.
           </p>
 
           {/* Pricing Calculator Toggle */}
           <div className="flex items-center justify-center mb-8">
-            <div className="glass rounded-2xl p-0.2 flex items-center space-x-4">
+            <div className="shadow-[0_5px_5px_rgba(130,129,134,0.7)] hover:shadow-[0_5px_15px_rgba(130,129,134,0.7)] border-none rounded-2xl  flex items-center space-x-0.5">
               <div className="flex items-center"></div>
 
-              <div className="flex items-center bg-white/20 dark:bg-gray-800/20 rounded-xl p-1">
+              <div className="flex items-center bg-glass dark:bg-gray-800/20 rounded-xl p-2">
                 <button
                   onClick={() => setIsAnnual(false)}
                   className={`px-4 py-2 text-sm font-medium rounded-lg transition-all duration-300 ${
@@ -121,7 +124,7 @@ export function PricingSection() {
 
           {/* Savings Calculator Display */}
           {isAnnual && (
-            <div className="glass rounded-2xl p-6 max-w-2xl mx-auto mb-8">
+            <div className="rounded-2xl group hover:shadow-[0_10px_20px_rgba(130,129,134,0.3)] transition-all duration-300 transform hover:-translate-y-2 border-0 glass dark-card-bg shadow-[0_5px_15px_rgba(130,129,134,0.3)] p-6 max-w-2xl mx-auto mb-8">
               <h3 className="text-lg font-semibold mb-4 gradient-text">
                 Annual Savings Calculator
               </h3>
@@ -166,7 +169,7 @@ export function PricingSection() {
             return (
               <Card
                 key={index}
-                className={`relative group hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 border-0 glass dark-card-bg ${
+                className={`relative group hover:shadow-[0_10px_20px_rgba(130,129,134,0.3)] transition-all duration-300 transform hover:-translate-y-2 border-0 glass dark-card-bg shadow-[0_5px_15px_rgba(130,129,134,0.3)] border-gray-600 ${
                   plan.popular
                     ? "ring-2 ring-purple-600 ring-opacity-50 scale-105"
                     : ""
@@ -205,7 +208,7 @@ export function PricingSection() {
 
                   {/* Price Display */}
                   <div className="flex items-baseline justify-center mb-2">
-                    <span className="text-4xl font-bold gradient-text">
+                    <span className="text-4xl font-bold bg-gradient-to-r from-pink-500 via-violet-500 to-blue-700 bg-clip-text text-transparent">
                       ${currentPrice}
                     </span>
                     <span className="text-gray-600 dark:text-gray-400 ml-1">

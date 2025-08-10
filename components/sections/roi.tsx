@@ -39,12 +39,18 @@ export function RoiCalculatorSection() {
   }, [monthlySpend, teamSize, manualHours]);
 
   return (
-    <section className="w-full py-12 md:py-24 lg:py-32 bg-gradient-to-br from-blue-50 via-purple-50 to-pink-50 dark:bg-gradient-to-br dark:from-black dark:via-black dark:to-black">
+    <section className="w-full py-1 md:py-5 lg:py-5 bg-gradient-to-br from-blue-50 via-purple-50 to-pink-50 dark:bg-gradient-to-br dark:from-black dark:via-black dark:to-black">
       <div className="container px-4 md:px-6">
         <div className="flex flex-col items-center justify-center space-y-4 text-center">
           <div className="space-y-2">
             <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">
-              Calculate Your ROI
+              <span className="text-gray-900 dark:text-white">
+                Calculate Your,
+              </span>
+              <span className="bg-gradient-to-r from-pink-500 via-violet-500 to-blue-700 bg-clip-text text-transparent">
+                {" "}
+                ROI
+              </span>
             </h2>
             <p className="max-w-[900px] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed dark:text-gray-400">
               See how much you could save with AI automation based on your

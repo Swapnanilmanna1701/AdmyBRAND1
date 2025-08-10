@@ -3,6 +3,7 @@
 import { AuroraText } from "@/components/ui/aurora-text";
 import { AnimatedGradientTextDemo } from "@/components/ui/banner-button";
 import { Button } from "@/components/ui/button";
+import {VideoTextDemo} from "@/components/ui/video-text";
 import {
   ArrowRight,
   Play,
@@ -139,7 +140,7 @@ export function HeroSection() {
       {/* Main Content */}
       <div className=" z-10 max-w-1xl text-center">
         {/* Futuristic Badge */}
-        <div className="mb-5">
+        <div className="mb-20">
           <AnimatedGradientTextDemo />
         </div>
 
@@ -149,9 +150,9 @@ export function HeroSection() {
             isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
           }`}
         >
-          <span className="block mb-4">
-            <span className="bg-gradient-to-r from-blue-600 via-blue-500 to-blue-700 bg-clip-text text-transparent">
-              Transform
+          <span className="block">
+            <span >
+              <VideoTextDemo />
             </span>
           </span>
           <span className="block mb-4 text-gray-900 dark:text-white">
