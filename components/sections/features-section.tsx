@@ -197,7 +197,7 @@ const FeaturesSection: React.FC = () => {
                 scale: 1,
                 transition: { type: "spring", stiffness: 300, damping: 10 },
               }}
-              className="group glass rounded-3xl p-8 max-w-4xl mx-auto group hover:shadow-[0_10px_15px_rgba(130,129,134,0.7)] transition-all duration-300 transform hover:-translate-y-2 border-0 glass dark-card-bg shadow-[0_5px_15px_rgba(130,129,134,0.3)] border-gray-600"
+              className="group glass rounded-3xl p-8 group hover:shadow-[0_10px_15px_rgba(130,129,134,0.7)] transition-all duration-300 transform hover:-translate-y-2 border-0 glass dark-card-bg shadow-[0_5px_15px_rgba(130,129,134,0.3)] border-gray-600"
               onMouseEnter={() => setHoveredFeature(feature.id)}
               onMouseLeave={() => setHoveredFeature(null)}
             >
@@ -431,7 +431,7 @@ const FeaturesSection: React.FC = () => {
 
         {/* Feature Comparison */}
         <motion.div
-          className="mt-16 bg-card rounded-2xl p-8 border border-border shadow-card"
+          className="mt-16 bg-card rounded-2xl p-8 shadow-[0_5px_10px_rgba(130,129,134,0.7)] hover:shadow-[0_5px_15px_rgba(130,129,134,0.7)]"
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}

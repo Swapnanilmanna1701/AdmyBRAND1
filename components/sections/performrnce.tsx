@@ -198,7 +198,7 @@ export function PerformanceOptimizationSection() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
           viewport={{ once: true }}
-          className="bg-gray-50 dark:bg-card rounded-2xl p-8 shadow-lg border border-gray-200 dark:border-gray-800"
+          className="bg-gray-50 dark:bg-card rounded-2xl p-8 shadow-[0_5px_10px_rgba(130,129,134,0.7)] hover:shadow-[0_5px_15px_rgba(130,129,134,0.7)]"
         >
           <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-8 text-left">
             Choose Your Marketing Channel
@@ -231,7 +231,7 @@ export function PerformanceOptimizationSection() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 text-left">
             {/* Current Performance */}
-            <div className="bg-white dark:bg-background rounded-xl p-6 border border-gray-200 dark:border-gray-800">
+            <div className="glass rounded-3xl p-8 group hover:shadow-[0_10px_20px_rgba(130,129,134,0.3)] transition-all duration-300 transform hover:-translate-y-2 border-0 glass dark-card-bg shadow-[0_5px_15px_rgba(130,129,134,0.3)]">
               <h4 className="text-xl font-bold text-gray-900 dark:text-white mb-4 flex items-center">
                 <motion.div
                   initial={{ rotate: 0 }}
@@ -268,7 +268,7 @@ export function PerformanceOptimizationSection() {
             </div>
 
             {/* AI Optimized Performance */}
-            <div className="bg-white dark:bg-background rounded-xl p-6 border border-gray-200 dark:border-gray-800">
+            <div className="lass rounded-3xl p-8 group hover:shadow-[0_10px_20px_rgba(130,129,134,0.3)] transition-all duration-300 transform hover:-translate-y-2 border-0 glass dark-card-bg shadow-[0_5px_15px_rgba(130,129,134,0.3)]">
               <h4 className="text-xl font-bold text-gray-900 dark:text-white mb-4 flex items-center">
                 <Zap className="w-5 h-5 mr-2 text-blue-600" />
                 AI Optimized
